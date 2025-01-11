@@ -2,6 +2,9 @@
 
 An interactive web application that helps people understand the problems with traditional banking and explore alternative financial systems. The guide offers multiple learning paths for different financial alternatives, from cryptocurrencies to precious metals.
 
+## 🚀 Live Demo
+[View Live Demo](https://mnpezz.github.io/BoycottBank/)
+
 ## 🎯 Purpose
 
 This educational platform aims to:
