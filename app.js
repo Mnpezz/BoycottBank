@@ -56,30 +56,10 @@ function getUSDCContent(step) {
     switch(step) {
         case 1:
             return `
-                <h2>Understanding USDC</h2>
+                <h2>USDC Networks</h2>
                 <div class="info-box">
-                    <h3>💡 What is USDC?</h3>
-                    <p>USDC (USD Coin) is a digital dollar, also known as a stablecoin, that's always worth $1. It combines the stability of USD with the speed and flexibility of cryptocurrency.</p>
-                    <div class="example-grid">
-                        <div class="example-item">
-                            <h4>Benefits:</h4>
-                            <ul>
-                                <li>Always worth $1 USD</li>
-                                <li>Fully backed by real dollars</li>
-                                <li>Regular audits</li>
-                                <li>Works across multiple networks</li>
-                            </ul>
-                        </div>
-                        <div class="example-item">
-                            <h4>Use Cases:</h4>
-                            <ul>
-                                <li>Digital payments</li>
-                                <li>International transfers</li>
-                                <li>DeFi applications</li>
-                                <li>Bill payments</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <h3>💡 Choose Your Network</h3>
+                    <p>USDC operates on multiple blockchain networks. Each offers different benefits for different uses.</p>
                 </div>
 
                 <div class="service-grid">
@@ -97,8 +77,8 @@ function getUSDCContent(step) {
                                 <li>⚠️ Higher fees ($5-50)</li>
                             </ul>
                             <div class="card-actions">
-                                <a href="https://ethereum.org/en/what-is-ethereum/" target="_blank" class="button">Learn More</a>
-                                <a href="https://ethereum.org/en/get-eth/" target="_blank" class="link">Get Started →</a>
+                                <a href="https://ethereum.org" target="_blank" class="button">Learn More</a>
+                                <a href="https://app.uniswap.org" target="_blank" class="link">Get Started →</a>
                             </div>
                         </div>
                     </div>
@@ -117,8 +97,28 @@ function getUSDCContent(step) {
                                 <li>✓ Easy onboarding</li>
                             </ul>
                             <div class="card-actions">
-                                <a href="https://base.org/" target="_blank" class="button">Try Base</a>
-                                <a href="https://docs.base.org/" target="_blank" class="link">Learn More →</a>
+                                <a href="https://base.org" target="_blank" class="button">Try Base</a>
+                                <a href="https://docs.base.org" target="_blank" class="link">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>⚡ Arbitrum</h3>
+                            <span class="tag">Popular L2</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Leading Ethereum Layer 2 with strong ecosystem</p>
+                            <ul>
+                                <li>✓ Low fees ($0.10-0.50)</li>
+                                <li>✓ Large DeFi ecosystem</li>
+                                <li>✓ High throughput</li>
+                                <li>✓ Growing adoption</li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="https://arbitrum.io" target="_blank" class="button">Use Arbitrum</a>
+                                <a href="https://bridge.arbitrum.io" target="_blank" class="link">Bridge Now →</a>
                             </div>
                         </div>
                     </div>
@@ -129,39 +129,36 @@ function getUSDCContent(step) {
                             <span class="tag">Fastest</span>
                         </div>
                         <div class="card-content">
-                            <p>High-speed, low-cost USDC transactions</p>
+                            <p>High-speed blockchain with instant settlements</p>
                             <ul>
-                                <li>✓ Minimal fees ($0.001)</li>
-                                <li>✓ Instant transactions</li>
-                                <li>✓ Mobile friendly</li>
-                                <li>✓ Growing ecosystem</li>
+                                <li>✓ Instant finality</li>
+                                <li>✓ Tiny fees ($0.001)</li>
+                                <li>✓ Active ecosystem</li>
+                                <li>✓ Great UI/UX</li>
                             </ul>
                             <div class="card-actions">
-                                <a href="https://solana.com/" target="_blank" class="button">Try Solana</a>
-                                <a href="https://docs.solana.com/" target="_blank" class="link">Learn More →</a>
+                                <a href="https://solana.com" target="_blank" class="button">Try Solana</a>
+                                <a href="https://phantom.app" target="_blank" class="link">Get Wallet →</a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="feature-section">
-                    <h3>🔄 Bill Payment Options</h3>
                     <div class="service-card">
                         <div class="card-header">
-                            <h3>💳 Spritz Finance</h3>
-                            <span class="tag">Bill Pay</span>
+                            <h3>🟣 Polygon</h3>
+                            <span class="tag">Versatile</span>
                         </div>
                         <div class="card-content">
-                            <p>Pay any bill with your USDC</p>
+                            <p>Ethereum sidechain with massive adoption</p>
                             <ul>
-                                <li>✓ Pay rent, utilities, credit cards</li>
-                                <li>✓ Works with multiple networks</li>
-                                <li>✓ Automated payments</li>
-                                <li>✓ No bank account needed</li>
+                                <li>✓ Low fees ($0.01-0.05)</li>
+                                <li>✓ NFT friendly</li>
+                                <li>✓ Many dApps</li>
+                                <li>✓ Enterprise ready</li>
                             </ul>
                             <div class="card-actions">
-                                <a href="https://app.spritz.finance/signup?grsf=z0bl8w" target="_blank" class="button">Try Spritz</a>
-                                <a href="https://www.spritz.finance/blog/pay-bills-with-bitcoin" target="_blank" class="link">How it Works →</a>
+                                <a href="https://polygon.technology" target="_blank" class="button">Use Polygon</a>
+                                <a href="https://wallet.polygon.technology" target="_blank" class="link">Bridge In →</a>
                             </div>
                         </div>
                     </div>
@@ -186,10 +183,24 @@ function getUSDCContent(step) {
                         <div class="example-item">
                             <h4>Network Selection:</h4>
                             <ul>
-                                <li>Ethereum (Most secure)</li>
-                                <li>Base (Low fees)</li>
-                                <li>Solana (Fast)</li>
-                                <li>Polygon (Versatile)</li>
+                                <li>Ethereum (Most secure, high fees)</li>
+                                <li>Arbitrum (Fast & cheap)</li>
+                                <li>Base (Coinbase backed)</li>
+                                <li>Solana (Fast & popular)</li>
+                                <li>Polygon (Wide adoption)</li>
+                                <li>Avalanche (Quick finality)</li>
+                                <li>Optimism (Ethereum L2)</li>
+                                <li>Tron (Asia focused)</li>
+                            </ul>
+                        </div>
+                        <div class="example-item">
+                            <h4>Best Practices:</h4>
+                            <ul>
+                                <li>Compare gas fees</li>
+                                <li>Verify addresses</li>
+                                <li>Start with small amounts</li>
+                                <li>Check bridge security</li>
+                                <li>Watch for airdrops</li>
                             </ul>
                         </div>
                     </div>
