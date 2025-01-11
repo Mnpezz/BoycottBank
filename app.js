@@ -1458,7 +1458,7 @@ function getNanoContent(step) {
                     </div>
                     <div class="faucet-card">
                         <h3>🎯 Nano-GPT</h3>
-                        <p>Play games, watch ads and earn Nano</p>
+                        <p>View multiple options to earn Nano and use Nano-GPT</p>
                         <a href="https://nano-gpt.com/earn" target="_blank" class="button">Use nano-gpt</a>
                     </div>
                     <div class="faucet-card">
