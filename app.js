@@ -432,7 +432,7 @@ function getBitcoinContent(step) {
                             </ul>
                             <div class="card-actions">
                                 <a href="https://strike.me/" target="_blank" class="button">Try Strike</a>
-                                <a href="https://strike.me/en/why/bitcoin/" target="_blank" class="link">Learn More →</a>
+                                <a href="https://strike.me/en/bitcoin/" target="_blank" class="link">Learn More →</a>
                             </div>
                         </div>
                     </div>
@@ -489,6 +489,7 @@ function getBitcoinContent(step) {
                                 <li>✓ Ledger Nano (Most Popular)</li>
                                 <li>✓ Trezor (Open Source)</li>
                                 <li>✓ Coldcard (Bitcoin Only)</li>
+                                <li>✓ Tangem (Easy to Use)</li>
                                 <li>✓ Physical security</li>
                             </ul>
                             <div class="card-actions">
@@ -506,13 +507,14 @@ function getBitcoinContent(step) {
                         <div class="card-content">
                             <p>Convenient for smaller amounts and daily spending</p>
                             <ul>
+                                <li>✓ Aqua Wallet (Liquid Focus)</li>
                                 <li>✓ Blue Wallet (Feature Rich)</li>
                                 <li>✓ Muun (Simple & Secure)</li>
                                 <li>✓ Phoenix (Lightning Focus)</li>
                                 <li>✓ Easy backups</li>
                             </ul>
                             <div class="card-actions">
-                                <a href="https://bluewallet.io/" target="_blank" class="button">Try Blue Wallet</a>
+                                <a href="https://aqua.net/.io/" target="_blank" class="button">Try Aqua Wallet</a>
                                 <a href="https://muun.com/" target="_blank" class="link">Try Muun →</a>
                             </div>
                         </div>
@@ -546,7 +548,7 @@ function getBitcoinContent(step) {
                         <div class="service-card">
                             <div class="card-header">
                                 <h3>⚡ Strike</h3>
-                                <span class="tag">Best for DCA</span>
+                                <span class="tag">Best for Paying Bills</span>
                             </div>
                             <div class="card-content">
                                 <p>Automated Bitcoin purchases with zero fees</p>
@@ -558,7 +560,7 @@ function getBitcoinContent(step) {
                                 </ul>
                                 <div class="card-actions">
                                     <a href="https://strike.me/" target="_blank" class="button">Try Strike</a>
-                                    <a href="https://strike.me/en/why/bitcoin/" target="_blank" class="link">Learn More →</a>
+                                    <a href="https://strike.me/business/" target="_blank" class="link">Strike for Business →</a>
                                 </div>
                             </div>
                         </div>
@@ -566,7 +568,7 @@ function getBitcoinContent(step) {
                         <div class="service-card">
                             <div class="card-header">
                                 <h3>🏦 River Financial</h3>
-                                <span class="tag">Best for Savings</span>
+                                <span class="tag">Best for DCA</span>
                             </div>
                             <div class="card-content">
                                 <p>Professional Bitcoin services with FDIC-insured USD</p>
@@ -586,7 +588,7 @@ function getBitcoinContent(step) {
                         <div class="service-card">
                             <div class="card-header">
                                 <h3>🔐 Swan Bitcoin</h3>
-                                <span class="tag">Best for Education</span>
+                                <span class="tag">Best for Saving</span>
                             </div>
                             <div class="card-content">
                                 <p>Bitcoin-only platform with extensive learning resources</p>
@@ -598,7 +600,7 @@ function getBitcoinContent(step) {
                                 </ul>
                                 <div class="card-actions">
                                     <a href="https://www.swanbitcoin.com/" target="_blank" class="button">Try Swan</a>
-                                    <a href="https://www.swanbitcoin.com/why-swan/" target="_blank" class="link">Learn More →</a>
+                                    <a href="https://www.swanbitcoin.com/business/" target="_blank" class="link">Swan for Business →</a>
                                 </div>
                             </div>
                         </div>
@@ -895,7 +897,7 @@ function getMoneroContent(step) {
                             </ul>
                             <div class="card-actions">
                                 <a href="https://retoswap.com/" target="_blank" class="button">Try RetoSwap</a>
-                                <a href="https://retoswap.com/guide" target="_blank" class="link">View Guide →</a>
+                                <a href="https://retoswap.com/#download" target="_blank" class="link">Download Here →</a>
                             </div>
                         </div>
                     </div>
@@ -915,7 +917,7 @@ function getMoneroContent(step) {
                             </ul>
                             <div class="card-actions">
                                 <a href="https://unstoppableswap.net/" target="_blank" class="button">Try Swaps</a>
-                                <a href="https://github.com/UnstoppableSwap/unstoppableswap-gui" target="_blank" class="link">Learn More →</a>
+                                <a href="https://github.com/UnstoppableSwap/core" target="_blank" class="link">Learn More →</a>
                             </div>
                         </div>
                     </div>
