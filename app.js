@@ -1852,6 +1852,26 @@ function getBankingContent(step) {
                     <h3>🏛️ Key Historical Events</h3>
                     <div class="timeline-grid">
                         <div class="timeline-item">
+                            <h4>1913: Federal Reserve Created</h4>
+                            <ul>
+                                <li>Private banking cartel formed</li>
+                                <li>Control over money supply</li>
+                                <li>Beginning of dollar debasement</li>
+                                <li>End of true free banking</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>1933: Gold Confiscation</h4>
+                            <ul>
+                                <li>Executive Order 6102</li>
+                                <li>Private gold ownership banned</li>
+                                <li>Forced turn-in at $20.67/oz</li>
+                                <li>Price raised to $35/oz after</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
                             <h4>1971: End of Gold Standard</h4>
                             <ul>
                                 <li>Dollar backed by nothing</li>
@@ -1860,6 +1880,17 @@ function getBankingContent(step) {
                                 <li>Wages stop tracking productivity</li>
                             </ul>
                         </div>
+
+                        <div class="timeline-item">
+                            <h4>1999: Glass-Steagall Repeal</h4>
+                            <ul>
+                                <li>Banking/Investment merger</li>
+                                <li>Increased risk-taking</li>
+                                <li>Set stage for 2008 crisis</li>
+                                <li>Too big to fail begins</li>
+                            </ul>
+                        </div>
+
                         <div class="timeline-item">
                             <h4>2008: Financial Crisis</h4>
                             <ul>
@@ -1867,6 +1898,26 @@ function getBankingContent(step) {
                                 <li>Taxpayers forced to bail out banks</li>
                                 <li>No executives prosecuted</li>
                                 <li>Problem got worse, not better</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>2020: COVID Response</h4>
+                            <ul>
+                                <li>40% of all USD printed</li>
+                                <li>Massive wealth transfer</li>
+                                <li>Record inflation follows</li>
+                                <li>Small businesses destroyed</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>2023: Banking Crisis</h4>
+                            <ul>
+                                <li>Multiple major bank failures</li>
+                                <li>SVB, Signature, First Republic fall</li>
+                                <li>Bailouts disguised as "rescues"</li>
+                                <li>System more fragile than ever</li>
                             </ul>
                         </div>
                     </div>
