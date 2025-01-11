@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boycott the Banks - Exploratory Guide</title>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --bitcoin-color: #F7931A;
+            --bg-dark: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .step {
+            display: none;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .nano-side, .btc-side {
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .nano-side:hover, .btc-side:hover {
+            transform: translateY(-5px);
+        }
+
+        .nano-side {
+            background: linear-gradient(135deg, #4A90E2, #357ABD);
+            color: white;
+        }
+
+        .btc-side {
+            background: linear-gradient(135deg, #F7931A, #E27F00);
+            color: white;
+        }
+
+        .button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin: 12px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #walletStatus, #faucetStatus {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(74, 144, 226, 0.1);
+        }
+
+        .step h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        ol li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* Add smooth transitions */
+        * {
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faucet-list, .example-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .faucet-card, .example-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .faucet-card:hover, .example-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .next-step {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(74, 144, 226, 0.1);
+            border-radius: 12px;
+        }
+
+        .example-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .earning-info {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(74, 144, 226, 0.1);
+            border-radius: 12px;
+        }
+
+        .earning-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .earning-info ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .earning-info ul li {
+            padding: 10px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .store-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cart-sidebar {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .demo-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Game canvas styles */
+        #pongCanvas {
+            background: black;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .speed-test {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .counter {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .demo-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(74, 144, 226, 0.1);
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .demo-note ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .demo-note li {
+            margin: 5px 0;
+        }
+
+        /* Comparison styles */
+        .comparison-container {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+        }
+
+        .comparison-controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .comparison-controls input {
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background: var(--bg-dark);
+            color: var(--text-color);
+            width: 150px;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        .comparison-table th {
+            background: var(--bg-dark);
+            color: var(--primary-color);
+        }
+
+        .comparison-table .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .cost-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .cost-card {
+            background: var(--bg-dark);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .cost-card .amount {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .cost-card .fee {
+            color: #ff4444;
+        }
+
+        .cost-card .total {
+            color: #4CAF50;
+        }
+
+        .seed-instructions {
+            margin: 10px 0 10px 20px;
+            padding: 15px;
+            background: rgba(74, 144, 226, 0.1);
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 193, 7, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .warning-box h4 {
+            color: #ffc107;
+            margin: 0 0 10px 0;
+        }
+
+        .step-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        .nav-btn {
+            min-width: 120px;
+        }
+
+        .step-indicator {
+            font-size: 0.9em;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .completion-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .center-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .path-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .path-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .path-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .path-card h3 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+
+        .path-card .subtitle {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .path-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .path-features li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .path-features li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(74, 144, 226, 0.1);
+            border-radius: 12px;
+        }
+
+        .timeline-item {
+            text-align: center;
+        }
+
+        .timeline-item .date {
+            color: var(--primary-color);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #dashboardBtn {
+            background: var(--bg-dark);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        #dashboardBtn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .history-timeline {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .timeline-card {
+            background: var(--bg-dark);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .timeline-card .era {
+            color: var(--primary-color);
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .timeline-card h4 {
+            margin: 10px 0;
+            color: white;
+        }
+
+        .timeline-card ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .metals-options {
+            display: grid;
+            gap: 20px;
+        }
+
+        .option-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .providers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .provider {
+            background: var(--bg-dark);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .provider h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .advanced-features {
+            display: grid;
+            gap: 30px;
+        }
+
+        .feature-section {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .tool-card {
+            background: var(--bg-dark);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .explorer-options,
+        .tracker-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .completion-note {
+            background: rgba(40, 167, 69, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .completion-note ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .completion-note .button {
+            margin-top: 15px;
+        }
+
+        .info-box {
+            background: rgba(74, 144, 226, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .example-item {
+            background: var(--bg-dark);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: var(--bg-dark);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .path-card[onclick="selectPath('banking')"] {
+            border: 2px solid #ffc107;
+            background: rgba(255, 193, 7, 0.1);
+        }
+
+        .path-card[onclick="selectPath('banking')"] h3 {
+            color: #ffc107;
+        }
+
+        .button.warning {
+            background: #ffc107;
+            color: #000;
+        }
+
+        .button.warning:hover {
+            background: #ffca2c;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Boycott the Banks - Exploratory Guide</h1>
+        
+        <!-- Step 1: Introduction -->
+        <div class="step active" id="step1">
+            <h2>Banking Alternatives Guide</h2>
+            <div class="intro-text">
+                <p>Discover how to live independently of traditional banking using modern digital alternatives.</p>
+                <h3>Choose your preferred path:</h3>
+            </div>
+            <div class="path-selection">
+                <div class="path-card" onclick="selectPath('banking')">
+                    <h3>🏦 Traditional Banking</h3>
+                    <p class="subtitle">Understanding The Problem</p>
+                    <ul class="path-features">
+                        <li>Federal Reserve System</li>
+                        <li>Money Creation Process</li>
+                        <li>True Cost of Inflation</li>
+                        <li>Historical Breaking Points</li>
+                    </ul>
+                    <button class="button warning">Learn How Money Works</button>
+                </div>
+
+                <div class="path-card" onclick="selectPath('nano')">
+                    <h3>⚡ Nano</h3>
+                    <p class="subtitle">Feeless Digital Cash</p>
+                    <ul class="path-features">
+                        <li>Instant & Free Transfers</li>
+                        <li>Zero Inflation</li>
+                        <li>Eco-Friendly</li>
+                        <li>Perfect for Daily Use</li>
+                    </ul>
+                    <button class="button">Learn About Nano</button>
+                </div>
+
+                <div class="path-card" onclick="selectPath('usdc')">
+                    <h3>💵 USDC</h3>
+                    <p class="subtitle">Digital Dollars</p>
+                    <ul class="path-features">
+                        <li>USD-Pegged Stability</li>
+                        <li>Multi-Chain Options</li>
+                        <li>Wide Acceptance</li>
+                        <li>Bill Payment Ready</li>
+                    </ul>
+                    <button class="button">Explore USDC</button>
+                </div>
+
+                <div class="path-card" onclick="selectPath('bitcoin')">
+                    <h3>₿ Bitcoin</h3>
+                    <p class="subtitle">Digital Gold</p>
+                    <ul class="path-features">
+                        <li>Store of Value</li>
+                        <li>Lightning Payments</li>
+                        <li>Strike Integration</li>
+                        <li>River Banking</li>
+                    </ul>
+                    <button class="button">Start Using Bitcoin</button>
+                </div>
+
+                <div class="path-card" onclick="selectPath('monero')">
+                    <h3>🔒 Monero</h3>
+                    <p class="subtitle">Private Digital Cash</p>
+                    <ul class="path-features">
+                        <li>Complete Privacy</li>
+                        <li>P2P Trading</li>
+                        <li>RetoSwap DEX</li>
+                        <li>Fungible Money</li>
+                    </ul>
+                    <button class="button">Don't Choose Monero</button>
+                </div>
+
+                <div class="path-card" onclick="selectPath('metals')">
+                    <h3>🥇 Precious Metals</h3>
+                    <p class="subtitle">Traditional Wealth</p>
+                    <ul class="path-features">
+                        <li>Physical Ownership</li>
+                        <li>Historical Context</li>
+                        <li>Inflation Hedge</li>
+                        <li>Wealth Preservation</li>
+                    </ul>
+                    <button class="button">Dig Into Metals</button>
+                </div>
+            </div>
+
+            <div class="history-note">
+                <h3>📚 A Brief History of Money</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="date">Pre-1900s</span>
+                        <p>Bimetallic Standard (Gold & Silver)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">1900-1933</span>
+                        <p>Gold Standard Era</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">1944-1971</span>
+                        <p>Bretton Woods System</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">1971-Present</span>
+                        <p>Fiat Currency Era</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Wallet Creation -->
+        <div class="step" id="step2">
+            <h2>Creating Your First Nano Wallet</h2>
+            <p>Let's create your first Nano wallet. This is where you'll store and manage your Nano:</p>
+            <ol>
+                <li>Visit <a href="https://nault.cc" target="_blank">Nault.cc</a> (opens in new tab)</li>
+                <li>Click "Create New Wallet"</li>
+                <li>You'll be shown your "seed" - this is like the master password to your wallet:
+                    <ul class="seed-instructions">
+                        <li>Write it down on paper (don't store it digitally)</li>
+                        <li>Keep it somewhere safe, like a secure drawer or safe</li>
+                        <li>Never share it with anyone</li>
+                        <li>If you lose it, you can't recover your funds</li>
+                    </ul>
+                </li>
+                <li>After saving your seed, click "I've Stored My Seed Safely"</li>
+                <li>Your wallet is now ready to receive Nano!</li>
+            </ol>
+            <div class="warning-box">
+                <h4>⚠️ Important Security Tips:</h4>
+                <ul>
+                    <li>Your seed gives complete access to your funds</li>
+                    <li>Don't take screenshots of your seed</li>
+                    <li>Don't store it in cloud storage or email</li>
+                    <li>Consider making multiple paper copies stored in different safe locations</li>
+                </ul>
+            </div>
+            <div id="walletStatus"></div>
+            <div class="center-button">
+                <button class="button" onclick="checkWallet()">I've Created My Wallet</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Getting First Nano -->
+        <div class="step" id="step3">
+            <h2>Get Your First Nano</h2>
+            <p>Here are several ways to get some free Nano to experiment with:</p>
+            <div class="faucet-list">
+                <div class="faucet-card">
+                    <h3>🚰 NanoDrop</h3>
+                    <p>A simple faucet that drops small amounts of Nano</p>
+                    <a href="https://nanodrop.io" target="_blank" class="button">Visit NanoDrop</a>
+                </div>
+                <div class="faucet-card">
+                    <h3>🎮 PlayNano</h3>
+                    <p>Complete surveys, offers, and play games to earn Nano</p>
+                    <a href="https://playnano.online/faucets" target="_blank" class="button">Visit PlayNano</a>
+                </div>
+                <div class="faucet-card">
+                    <h3>📱 WeNano</h3>
+                    <p>Collect Nano from spots around the world</p>
+                    <a href="https://wenano.net" target="_blank" class="button">Try WeNano</a>
+                </div>
+                <div class="faucet-card">
+                    <h3>🎯 Nano-GPT</h3>
+                    <p>Play games, watch ads and earn Nano</p>
+                    <a href="https://nano-gpt.com/earn" target="_blank" class="button">Use nano-gpt</a>
+                </div>
+                <div class="faucet-card">
+                    <h3>🎬 CryptoVision</h3>
+                    <p>Watch videos and get paid in Nano</p>
+                    <a href="https://cryptovision.live/" target="_blank" class="button">Watch & Earn</a>
+                </div>
+                <div class="faucet-card">
+                    <h3>🔄 Nanswap</h3>
+                    <p>Use CPU mining to earn Nano</p>
+                    <a href="https://nanswap.com/nano-faucet" target="_blank" class="button">Try Nanswap</a>
+                </div>
+            </div>
+            <div class="earning-info">
+                <h3>💡 Tip: Multiple Ways to Earn</h3>
+                <p>Daily earnings vary by method:</p>
+                <ul>
+                    <li>Faucets: 0.01-0.1 Nano/day</li>
+                    <li>Gaming & Videos: 0.1-1 Nano/day</li>
+                    <li>Tasks & Surveys: 0.5-5 Nano/day</li>
+                    <li>Mining: 0.05-2 Nano/day</li>
+                </ul>
+            </div>
+            <div class="next-step">
+                <p>💡 You don't need to try every faucet - even a tiny amount of Nano is enough to continue!</p>
+                <button class="button" onclick="nextStep()">I've Got Some Nano!</button>
+            </div>
+        </div>
+
+        <!-- Add new Step 4: Payment Examples -->
+        <div class="step" id="step4">
+            <h2>Try Some Nano Transactions</h2>
+            <div class="example-cards">
+                <!-- Example 1: Simple Payment -->
+                <div class="example-card">
+                    <h3>💸 Simple Payment</h3>
+                    <p>Send a tiny amount with Nano.to</p>
+                    <button class="button" onclick="demonstrateSimplePayment()">Try It</button>
+                </div>
+
+                <!-- Example 2: BitRequest Demo -->
+                <div class="example-card">
+                    <h3>🔌 Payment Link</h3>
+                    <p>Try the BitRequest invoice url</p>
+                    <button class="button" onclick="demonstrateShopPayment()">Visit Shop</button>
+                </div>
+
+                <!-- Example 3: Demo Shop -->
+                <div class="example-card">
+                    <h3>🛍️ Shop Demo</h3>
+                    <p>Try the brewery demo shop</p>
+                    <button class="button" onclick="nextStep()">Visit Shop</button>
+                </div>
+
+                <!-- Example 5: Swap Demo -->
+                <div class="example-card">
+                    <h3>💱 Swap Demo</h3>
+                    <p>Try swapping Nano with Nanswap</p>
+                    <a href="https://nanswap.com/" target="_blank" class="button">Nanswap</a>
+                </div>
+
+                <!-- Example 6: Invoice Demo -->
+                <div class="example-card">
+                    <h3>📃 Invoice Demo</h3>
+                    <p>Generate a payment invoice</p>
+                    <button class="button" onclick="demonstrateInvoice()">Create Invoice</button>
+                </div>
+
+                <!-- Example 4: Donation -->
+                <div class="example-card">
+                    <h3>💝 Donation</h3>
+                    <p>Support Nano development (optional)</p>
+                    <a href="https://nano.to/development" target="_blank" class="button">Donate</a>
+                </div>
+            </div>
+            <div class="demo-note">
+                <p><strong>Note:</strong> These demos showcase different Nano payment solutions:
+                    <ul>
+                        <li>Simple payments using <a href="https://docs.nano.to/checkout" target="_blank">nano.to checkout</a></li>
+                        <li>Payment link using <a href="https://www.bitrequest.io/request-url/" target="_blank">BitRequest's interface</a></li>
+                        <li>Swap demo using <a href="https://nanswap.com/" target="_blank">Nanswap's exchange</a></li>
+                    </ul>
+                </p>
+            </div>
+            <div class="completion-note">
+                <p>Try at least one of the payment demos above to see how fast and easy Nano transactions are!</p>
+                <p>When you're ready, click 'Next' to continue exploring.</p>
+                <button class="button" onclick="nextStep()">Continue to Store Demo →</button>
+            </div>
+        </div>
+
+        <!-- Add new Step 5: Nano Store Demo -->
+        <div class="step" id="step5">
+            <h2>Nano Store Example</h2>
+            <div class="store-container">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" alt="Cryptocraft Original">
+                        <h3>CryptoCraft Original</h3>
+                        <p>Truly the height of our brewing craft.</p>
+                        <div class="price">$2.00</div>
+                        <button class="button" onclick="addToCart('original')">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=400" alt="CryptoCraft Lite">
+                        <h3>CryptoCraft Lite</h3>
+                        <p>A lighter chip off the original block.</p>
+                        <div class="price">$1.00</div>
+                        <button class="button" onclick="addToCart('lite')">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1618183479302-1e0aa382c36b?w=400" alt="CryptoCraft Skynet">
+                        <h3>CryptoCraft Skynet</h3>
+                        <p>If you really, really like beer.</p>
+                        <div class="price">$4.00</div>
+                        <button class="button" onclick="addToCart('skynet')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="cart-sidebar">
+                    <h3>Shopping Cart</h3>
+                    <div id="cart-items"></div>
+                    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+                    <button class="button checkout-btn" onclick="checkoutWithNano()">Checkout with Nano</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add new Step 6: Payment Comparison -->
+        <div class="step" id="step6">
+            <h2>Compare Payment Methods</h2>
+            <div class="comparison-container">
+                <div class="comparison-controls">
+                    <input type="number" id="compareAmount" value="100" min="0.01" step="0.01">
+                    <button class="button" onclick="updateComparison()">Compare</button>
+                </div>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Nano</th>
+                                <th>Bitcoin</th>
+                                <th>PayPal</th>
+                                <th>Credit Card</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transaction Fee</td>
+                                <td class="highlight">$0.00</td>
+                                <td>$1-30</td>
+                                <td>2.9% + $0.30</td>
+                                <td>2.5-3.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Settlement Time</td>
+                                <td class="highlight">< 1 second</td>
+                                <td>10-60 minutes</td>
+                                <td>1-3 days</td>
+                                <td>2-3 days</td>
+                            </tr>
+                            <tr>
+                                <td>Energy per Tx</td>
+                                <td class="highlight">0.000112 Wh</td>
+                                <td>1,721.96 kWh</td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td>Chargebacks</td>
+                                <td class="highlight">Not possible</td>
+                                <td>Not possible</td>
+                                <td>180 days</td>
+                                <td>120 days</td>
+                            </tr>
+                            <tr>
+                                <td>Global Access</td>
+                                <td class="highlight">Worldwide</td>
+                                <td>Worldwide</td>
+                                <td>Limited</td>
+                                <td>Limited</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cost-comparison" id="costComparison">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Add navigation controls to each step -->
+        <div class="step-navigation">
+            <button class="button nav-btn" onclick="previousStep()" id="prevBtn">← Previous</button>
+            <div class="step-indicator">Step <span id="currentStep">1</span> of <span id="totalSteps">7</span></div>
+            <button class="button nav-btn" onclick="nextStep()" id="nextBtn">Next →</button>
+        </div>
+
+        <!-- Additional steps will be added here -->
+    </div>
+
+    <script src="https://pay.nano.to/latest.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
