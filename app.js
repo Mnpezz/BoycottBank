@@ -200,7 +200,6 @@ function getUSDCContent(step) {
                                 <li>Verify addresses</li>
                                 <li>Start with small amounts</li>
                                 <li>Check bridge security</li>
-                                <li>Watch for airdrops</li>
                             </ul>
                         </div>
                     </div>
