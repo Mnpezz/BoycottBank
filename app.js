@@ -1048,48 +1048,6 @@ function getMetalsContent(step) {
                     </div>
                 </div>
 
-                <div class="service-grid">
-                    <div class="service-card">
-                        <div class="card-header">
-                            <h3>💳 Kinesis Money</h3>
-                            <span class="tag">Digital + Physical</span>
-                        </div>
-                        <div class="card-content">
-                            <p>Digital gold/silver backed by physical metals</p>
-                            <ul>
-                                <li>✓ 1:1 physical backing</li>
-                                <li>✓ Yield on holdings</li>
-                                <li>✓ Debit card available</li>
-                                <li>✓ Physical redemption</li>
-                            </ul>
-                            <div class="card-actions">
-                                <a href="https://kinesis.money" target="_blank" class="button">Try Kinesis</a>
-                                <a href="https://kinesis.money/about-us/" target="_blank" class="link">Learn More →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="card-header">
-                            <h3>💻 OneGold</h3>
-                            <span class="tag">Professional Storage</span>
-                        </div>
-                        <div class="card-content">
-                            <p>APMEX & Sprott backed digital metals platform</p>
-                            <ul>
-                                <li>✓ Low premiums</li>
-                                <li>✓ Easy redemption</li>
-                                <li>✓ IRA eligible</li>
-                                <li>✓ Vaulted storage</li>
-                            </ul>
-                            <div class="card-actions">
-                                <a href="https://www.onegold.com" target="_blank" class="button">Try OneGold</a>
-                                <a href="https://www.onegold.com/learn-more" target="_blank" class="link">Learn More →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="history-note">
                     <h3>📚 Historical Context</h3>
                     <div class="timeline">
@@ -1117,7 +1075,7 @@ function getMetalsContent(step) {
                 <h2>Modern Precious Metals Options</h2>
                 <div class="metals-options">
                     <div class="option-card">
-                        <h3>🏦 Physical Storage</h3>
+                        <h3>🏦 Storage Services</h3>
                         <div class="providers">
                             <div class="provider">
                                 <h4>Kinesis Money</h4>
@@ -1142,7 +1100,7 @@ function getMetalsContent(step) {
                         </div>
                     </div>
                     <div class="option-card">
-                        <h3>🏪 Local Dealers</h3>
+                        <h3>🏪 Find Local Dealers</h3>
                         <p>Find reputable dealers near you:</p>
                         <ul>
                             <li><a href="https://www.pmsforsale.com" target="_blank">r/Pmsforsale</a> - Reddit's P2P precious metals market</li>
@@ -1506,7 +1464,7 @@ function getNanoContent(step) {
                     <div class="example-card">
                         <h3>🔌 Payment Link</h3>
                         <p>Try the BitRequest invoice url</p>
-                        <button class="button" onclick="demonstrateShopPayment()">Visit Shop</button>
+                        <button class="button" onclick="demonstrateShopPayment()">Pay Invoice</button>
                     </div>
 
                     <div class="example-card">
