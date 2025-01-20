@@ -7,7 +7,7 @@ const totalSteps = {
     bitcoin: 5,
     monero: 5,
     metals: 6,
-    banking: 5
+    banking: 5  // New traditional banking path
 };
 
 // Store original dashboard content
@@ -1795,6 +1795,26 @@ function getBankingContent(step) {
                         </div>
                     </div>
                 </div>
+
+                 <div class="service-grid">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>The Federal Reserve's Money Printer</h3>
+                            <span class="tag">Brrrrr</span>
+                        </div>
+                        <div class="card-content">
+                            <p>The official process of money creation in the U.S. involves the federal government borrowing from the Federal Reserve, which increases the money supply.</p>
+                            <ul>
+                                <li>✓ The Federal Reserve is not a government entity but a private central bank.</li>
+                                <li>✓ Despite its name, the Federal Reserve holds no real reserves.</li>
+                                <li>✓ The debt ceiling is repeatedly raised, allowing endless borrowing.</li>
+                                <li>⚠️ As more dollars enter circulation, purchasing power declines due to inflation.</li>
+                            </ul>
+                            <p class="note"><strong>“There is an infinite amount of cash at the Federal Reserve.”</strong> <br> Neel Kashkari - President of the Federal Reserve Minneapolis</p>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="info-box warning-box">
                     <h3>🏦 The FDIC Illusion</h3>
