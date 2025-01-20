@@ -5,9 +5,9 @@ const totalSteps = {
     nano: 6,
     usdc: 4,
     bitcoin: 5,
-    monero: 4,
+    monero: 5,
     metals: 6,
-    banking: 5  // New traditional banking path
+    banking: 5
 };
 
 // Store original dashboard content
@@ -533,86 +533,46 @@ function getBitcoinContent(step) {
             `;
         case 3:
             return `
-                <h2>Bitcoin DCA & Savings</h2>
+                <h2>Understanding Bitcoin Fees</h2>
                 <div class="info-box">
-                    <h3>💡 What is DCA?</h3>
-                    <p>Dollar Cost Averaging (DCA) is an investment strategy where you buy a fixed dollar amount of Bitcoin on a regular schedule, regardless of the price. This helps reduce the impact of price volatility.</p>
+                    <h3>💡 How Bitcoin Fees Work</h3>
+                    <p>Bitcoin fees are based on network demand and transaction size, not amount sent.</p>
                     <div class="example-grid">
                         <div class="example-item">
-                            <h4>Example:</h4>
-                            <p>Investing $100 in Bitcoin every week, instead of $400 once a month, helps you get a better average price over time.</p>
+                            <h4>Fee Components:</h4>
+                            <ul>
+                                <li>Block space demand</li>
+                                <li>Transaction size (bytes)</li>
+                                <li>Urgency of transaction</li>
+                                <li>Network congestion</li>
+                            </ul>
                         </div>
                         <div class="example-item">
-                            <h4>Benefits:</h4>
+                            <h4>Fee Ranges (2023):</h4>
                             <ul>
-                                <li>Reduces risk of buying at market peaks</li>
-                                <li>Creates healthy saving habits</li>
-                                <li>Removes emotional decision-making</li>
+                                <li>High Priority: $2-30</li>
+                                <li>Medium Priority: $1-10</li>
+                                <li>Low Priority: $0.50-5</li>
+                                <li>Lightning: < $0.01</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="savings-options">
-                    <div class="service-grid">
-                        <div class="service-card">
-                            <div class="card-header">
-                                <h3>⚡ Strike</h3>
-                                <span class="tag">Best for Paying Bills</span>
-                            </div>
-                            <div class="card-content">
-                                <p>Automated Bitcoin purchases with zero fees</p>
-                                <ul>
-                                    <li>✓ Zero fees on recurring buys</li>
-                                    <li>✓ Instant bank deposits</li>
-                                    <li>✓ Lightning Network ready</li>
-                                    <li>✓ Bill pay integration</li>
-                                </ul>
-                                <div class="card-actions">
-                                    <a href="https://strike.me/" target="_blank" class="button">Try Strike</a>
-                                    <a href="https://strike.me/business/" target="_blank" class="link">Strike for Business →</a>
-                                </div>
-                            </div>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>⚡ Lightning Network</h3>
+                            <span class="tag">Low Fees</span>
                         </div>
-
-                        <div class="service-card">
-                            <div class="card-header">
-                                <h3>🏦 River Financial</h3>
-                                <span class="tag">Best for DCA</span>
-                            </div>
-                            <div class="card-content">
-                                <p>Professional Bitcoin services with FDIC-insured USD</p>
-                                <ul>
-                                    <li>✓ Interest on USD holdings</li>
-                                    <li>✓ Cold storage security</li>
-                                    <li>✓ Mining investments</li>
-                                    <li>✓ Private client services</li>
-                                </ul>
-                                <div class="card-actions">
-                                    <a href="https://river.com/" target="_blank" class="button">Try River</a>
-                                    <a href="https://river.com/learn" target="_blank" class="link">Learn More →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="card-header">
-                                <h3>🔐 Swan Bitcoin</h3>
-                                <span class="tag">Best for Saving</span>
-                            </div>
-                            <div class="card-content">
-                                <p>Bitcoin-only platform with extensive learning resources</p>
-                                <ul>
-                                    <li>✓ Automatic withdrawals</li>
-                                    <li>✓ Low fees</li>
-                                    <li>✓ Premium education</li>
-                                    <li>✓ Private key workshops</li>
-                                </ul>
-                                <div class="card-actions">
-                                    <a href="https://www.swanbitcoin.com/" target="_blank" class="button">Try Swan</a>
-                                    <a href="https://www.swanbitcoin.com/business/" target="_blank" class="link">Swan for Business →</a>
-                                </div>
-                            </div>
+                        <div class="card-content">
+                            <p>Second layer solution for tiny fees</p>
+                            <ul>
+                                <li>✓ Sub-cent fees</li>
+                                <li>✓ Instant settlement</li>
+                                <li>✓ Ideal for small payments</li>
+                                <li>✓ Growing adoption</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -863,6 +823,52 @@ function getMoneroContent(step) {
             `;
         case 3:
             return `
+                <h2>Understanding Monero Fees</h2>
+                <div class="info-box">
+                    <h3>💡 How Monero Fees Work</h3>
+                    <p>Monero uses a dynamic fee structure based on network load and transaction size.</p>
+                    <div class="example-grid">
+                        <div class="example-item">
+                            <h4>Fee Components:</h4>
+                            <ul>
+                                <li>Base fee (per kB)</li>
+                                <li>Transaction size</li>
+                                <li>Network load</li>
+                                <li>Ring signature size</li>
+                            </ul>
+                        </div>
+                        <div class="example-item">
+                            <h4>Typical Fees (2023):</h4>
+                            <ul>
+                                <li>Standard TX: $0.001-0.01</li>
+                                <li>Priority TX: $0.02-0.05</li>
+                                <li>Large TX: $0.05-0.15</li>
+                                <li>Always private by default</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>🔒 Privacy Features</h3>
+                            <span class="tag">Built-in</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Fee privacy is also protected</p>
+                            <ul>
+                                <li>✓ Hidden amounts</li>
+                                <li>✓ Stealth addresses</li>
+                                <li>✓ Ring signatures</li>
+                                <li>✓ No fee correlation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        case 4:
+            return `
                 <h2>Acquiring Monero Privately</h2>
                 <div class="info-box">
                     <h3>💡 Privacy-Focused Trading</h3>
@@ -933,7 +939,7 @@ function getMoneroContent(step) {
                     </div>
                 </div>
             `;
-        case 4:
+        case 5:
             return `
                 <h2>Monero Considerations & Risks</h2>
                 <div class="info-box">
@@ -1482,35 +1488,9 @@ function getNanoContent(step) {
                         <a href="https://nanswap.com/nano-faucet" target="_blank" class="button">Try Nanswap</a>
                     </div>
                 </div>
-                <div class="earning-info">
-                    <h3>💡 Getting Started with Nano</h3>
-                    <p>Try these methods to get your first Nano:</p>
-                    <ul>
-                        <li>
-                            <span class="method">🎮 Games & Videos</span>
-                            <span class="time">5-15 minutes</span>
-                            <span class="reward">0.01-0.1 Nano</span>
-                        </li>
-                        <li>
-                            <span class="method">📱 WeNano Spots</span>
-                            <span class="time">Instant</span>
-                            <span class="reward">0.01-1 Nano</span>
-                        </li>
-                        <li>
-                            <span class="method">🎯 Faucets</span>
-                            <span class="time">Instant</span>
-                            <span class="reward">0.001-0.01 Nano</span>
-                        </li>
-                        <li>
-                            <span class="method">✍️ Surveys</span>
-                            <span class="time">10-30 minutes</span>
-                            <span class="reward">0.1-5 Nano</span>
-                        </li>
-                    </ul>
-                </div>
+                
                 <div class="next-step">
                     <p>💡 You don't need to try every faucet - even a tiny amount of Nano is enough to continue!</p>
-                    <button class="button" onclick="nextStep()">I've Got Some Nano!</button>
                 </div>
             `;
         case 3:
@@ -1538,7 +1518,7 @@ function getNanoContent(step) {
                     <div class="example-card">
                         <h3>💱 Swap Demo</h3>
                         <p>Try swapping Nano with Nanswap</p>
-                        <a href="https://nanswap.com/" target="_blank" class="button">Nanswap</a>
+                        <button class="button" onclick="demonstrateSwap()">Try Swap</button>
                     </div>
 
                     <div class="example-card">
@@ -1566,7 +1546,6 @@ function getNanoContent(step) {
                 <div class="completion-note">
                     <p>Try at least one of the payment demos above to see how fast and easy Nano transactions are!</p>
                     <p>When you're ready, click 'Next' to continue exploring.</p>
-                    <button class="button" onclick="nextStep()">Continue to Store Demo →</button>
                 </div>
             `;
         case 4:
@@ -1578,21 +1557,21 @@ function getNanoContent(step) {
                             <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" alt="Cryptocraft Original">
                             <h3>CryptoCraft Original</h3>
                             <p>Truly the height of our brewing craft.</p>
-                            <div class="price">$2.00</div>
+                            <div class="price">$0.25</div>
                             <button class="button" onclick="addToCart('original')">Add to Cart</button>
                         </div>
                         <div class="product-card">
                             <img src="https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=400" alt="CryptoCraft Lite">
                             <h3>CryptoCraft Lite</h3>
                             <p>A lighter chip off the original block.</p>
-                            <div class="price">$1.00</div>
+                            <div class="price">$0.10</div>
                             <button class="button" onclick="addToCart('lite')">Add to Cart</button>
                         </div>
                         <div class="product-card">
                             <img src="https://images.unsplash.com/photo-1618183479302-1e0aa382c36b?w=400" alt="CryptoCraft Skynet">
                             <h3>CryptoCraft Skynet</h3>
                             <p>If you really, really like beer.</p>
-                            <div class="price">$4.00</div>
+                            <div class="price">$0.50</div>
                             <button class="button" onclick="addToCart('skynet')">Add to Cart</button>
                         </div>
                     </div>
@@ -1679,6 +1658,7 @@ function getNanoContent(step) {
                         <div class="explorer-options">
                             <a href="https://blocklattice.io/" target="_blank" class="button">BlockLattice.io</a>
                             <a href="https://nanexplorer.com/nano" target="_blank" class="button">NanoExplorer</a>
+                            <a href="https://spynano.org/" target="_blank" class="button">Spynano</a>
                         </div>
                     </div>
 
@@ -1692,14 +1672,19 @@ function getNanoContent(step) {
                                 <a href="https://nanovisual.numsu.dev/" target="_blank" class="button">View Network</a>
                             </div>
                             <div class="tool-card">
-                                <h4>TX Highway</h4>
-                                <p>Compare Nano vs Bitcoin transactions</p>
-                                <a href="https://bitdesert.github.io/txhighway-nano/" target="_blank" class="button">Watch Traffic</a>
+                                <h4>Plinko</h4>
+                                <p>Every falling head is a real-time Nano transaction</p>
+                                <a href="https://plinko.somenano.com/" target="_blank" class="button">Watch Plinko</a>
                             </div>
                             <div class="tool-card">
                                 <h4>Nano Snow</h4>
                                 <p>Transactions as falling snowflakes</p>
                                 <a href="https://snow.somenano.com/" target="_blank" class="button">Let It Snow</a>
+                            </div>
+                             <div class="tool-card">
+                                <h4>NanoTicker</h4>
+                                <p>Network Performance</p>
+                                <a href="https://stats.nanobrowse.com/" target="_blank" class="button">Network Stats</a>
                             </div>
                         </div>
                     </div>
@@ -1862,36 +1847,96 @@ function getBankingContent(step) {
                     <h3>🏛️ Key Historical Events</h3>
                     <div class="timeline-grid">
                         <div class="timeline-item">
-                            <h4>1913: Federal Reserve Created</h4>
+                            <h4>1792: Coinage Act</h4>
                             <ul>
-                                <li>Private banking cartel formed</li>
-                                <li>Control over money supply</li>
-                                <li>Beginning of dollar debasement</li>
-                                <li>End of true free banking</li>
+                                <li>First US Dollar defined</li>
+                                <li>Based on Spanish Dollar</li>
+                                <li>371.25 grains pure silver</li>
+                                <li>24.75 grains pure gold</li>
                             </ul>
                         </div>
 
                         <div class="timeline-item">
-                            <h4>1933: Gold Confiscation</h4>
+                            <h4>1862: Legal Tender Act</h4>
                             <ul>
-                                <li>Executive Order 6102</li>
+                                <li>First paper "Greenbacks"</li>
+                                <li>Not backed by specie</li>
+                                <li>Civil War financing</li>
+                                <li>Forced acceptance began</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>1863-64: National Banking Acts</h4>
+                            <ul>
+                                <li>Created national banks</li>
+                                <li>National currency established</li>
+                                <li>State bank notes taxed</li>
+                                <li>Federal oversight begins</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>1913: Federal Reserve Act</h4>
+                            <ul>
+                                <li>Private banking cartel created</li>
+                                <li>Given power to issue currency</li>
+                                <li>Established fractional reserve</li>
+                                <li>Started systematic inflation</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>1933: Executive Order 6102</h4>
+                            <ul>
                                 <li>Private gold ownership banned</li>
-                                <li>Forced turn-in at $20.67/oz</li>
-                                <li>Price raised to $35/oz after</li>
+                                <li>Forced to sell at $20.67/oz</li>
+                                <li>Penalty: 10 years imprisonment</li>
+                                <li>Lasted until 1974</li>
                             </ul>
                         </div>
 
                         <div class="timeline-item">
-                            <h4>1971: End of Gold Standard</h4>
+                            <h4>1933: Banking Act</h4>
                             <ul>
-                                <li>Dollar backed by nothing</li>
-                                <li>Unlimited money printing</li>
-                                <li>Beginning of major inflation</li>
-                                <li>Wages stop tracking productivity</li>
+                                <li>FDIC established</li>
+                                <li>Initial coverage: $2,500</li>
+                                <li>Glass-Steagall enacted</li>
+                                <li>Separated commercial/investment banking</li>
                             </ul>
                         </div>
 
                         <div class="timeline-item">
+                            <h4>1934: Gold Reserve Act</h4>
+                            <ul>
+                                <li>Gold price set to $35/oz</li>
+                                <li>69% devaluation of dollar</li>
+                                <li>Federal Reserve gained all gold</li>
+                                <li>Treasury prints "gold certificates"</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>1944: Bretton Woods</h4>
+                            <ul>
+                                <li>Dollar becomes world reserve</li>
+                                <li>All currencies peg to USD</li>
+                                <li>USD pegged to gold at $35/oz</li>
+                                <li>IMF & World Bank created</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>1971: Nixon Shock</h4>
+                            <ul>
+                                <li>Gold standard abandoned</li>
+                                <li>Dollar becomes pure fiat</li>
+                                <li>Unlimited money printing begins</li>
+                                <li>Global inflation accelerates</li>
+                            </ul>
+                        </div>
+
+                         <div class="timeline-item">
                             <h4>1999: Glass-Steagall Repeal</h4>
                             <ul>
                                 <li>Banking/Investment merger</li>
@@ -1908,6 +1953,19 @@ function getBankingContent(step) {
                                 <li>Taxpayers forced to bail out banks</li>
                                 <li>No executives prosecuted</li>
                                 <li>Problem got worse, not better</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>FDIC Increases</h4>
+                            <ul>
+                                <li>1934: $5,000</li>
+                                <li>1950: $10,000</li>
+                                <li>1966: $15,000</li>
+                                <li>1969: $20,000</li>
+                                <li>1974: $40,000</li>
+                                <li>1980: $100,000</li>
+                                <li>2008: $250,000</li>
                             </ul>
                         </div>
 
@@ -1930,19 +1988,7 @@ function getBankingContent(step) {
                                 <li>System more fragile than ever</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
 
-                <div class="service-grid">
-                    <div class="service-card">
-                        <div class="card-header">
-                            <h3>📉 Purchasing Power Loss</h3>
-                            <span class="tag">Critical</span>
-                        </div>
-                        <div class="card-content">
-                            <img src="https://fred.stlouisfed.org/graph/fredgraph.png?g=qLC" alt="Dollar Purchasing Power" style="width: 100%; border-radius: 8px;">
-                            <p>The dollar has lost over 96% of its purchasing power since 1913</p>
-                        </div>
                     </div>
                 </div>
             `;
@@ -2210,9 +2256,9 @@ function showNotification(message, type = 'info') {
 
 // Add store functionality
 const products = {
-    original: { name: "CryptoCraft Original", price: 2.00 },
-    lite: { name: "CryptoCraft Lite", price: 1.00 },
-    skynet: { name: "CryptoCraft Skynet", price: 4.00 }
+    original: { name: "CryptoCraft Original", price: 0.25 },
+    lite: { name: "CryptoCraft Lite", price: 0.10 },
+    skynet: { name: "CryptoCraft Skynet", price: 0.50 }
 };
 
 let cart = {};
@@ -2272,7 +2318,7 @@ function checkoutWithNano() {
         wallet: 'natrium',
         button: 'Pay with Natrium',
         contact: true,
-        shipping: 2.00,
+        shipping: 0.01,
         line_items: items,
         onShippingUpdate: function(details) { return true; },
         success: (block) => {
@@ -2358,3 +2404,77 @@ function switchPath(newPath) {
     // Ensure we're at the top of the page
     window.scrollTo(0, 0);
 } 
+
+function demonstrateSwap() {
+    // Create modal container
+    const modal = document.createElement('div');
+    modal.className = 'swap-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-button" onclick="closeSwapModal()">&times;</span>
+            <iframe 
+                src="https://nanswap.com/iframe-swap/swap?defaultFrom=XNO&defaultTo=BAN&mode=swap&invitationId=demo" 
+                width="500" 
+                style="width: 100%; height: 500px; background: transparent; border: none; border-radius: 32px;">
+            </iframe>
+        </div>
+    `;
+
+    // Add styles if they don't exist
+    if (!document.querySelector('#modal-styles')) {
+        const styles = document.createElement('style');
+        styles.id = 'modal-styles';
+        styles.innerHTML = `
+            .swap-modal {
+                display: block;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.8);
+                animation: fadeIn 0.3s ease-out;
+            }
+
+            .modal-content {
+                background-color: var(--card-bg);
+                margin: 5% auto;
+                padding: 20px;
+                width: 90%;
+                max-width: 600px;
+                border-radius: 16px;
+                position: relative;
+            }
+
+            .close-button {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-bottom: 10px;
+            }
+
+            .close-button:hover {
+                color: var(--primary-color);
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(styles);
+    }
+
+    document.body.appendChild(modal);
+}
+
+function closeSwapModal() {
+    const modal = document.querySelector('.swap-modal');
+    if (modal) {
+        modal.style.animation = 'fadeIn 0.3s ease-out reverse';
+        setTimeout(() => modal.remove(), 300);
+    }
+}
