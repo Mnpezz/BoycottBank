@@ -7,7 +7,7 @@ const totalSteps = {
     bitcoin: 5,
     monero: 5,
     metals: 6,
-    banking: 5  // New traditional banking path
+    banking: 5
 };
 
 // Store original dashboard content
@@ -1528,18 +1528,17 @@ function getNanoContent(step) {
                     </div>
 
                     <div class="example-card">
-                        <h3>💝 Donation</h3>
-                        <p>Support Nano development</p>
-                        <a href="https://nano.to/development" target="_blank" class="button">Donate</a>
+                        <h3>💳 Buy Gift Cards</h3>
+                        <p>Powered by NanPay & Bitrefill</p>
+                        <a href="https://nanswap.com/shop" target="_blank" class="button">Shop Gift Cards</a>
                     </div>
                 </div>
                 <div class="demo-note">
                     <p><strong>Note:</strong> These demos showcase different Nano payment solutions:
                         <ul>
-                            <li>Simple payment uses <a href="https://docs.nano.to/checkout" target="_blank">nano.to checkout</a></li>
+                            <li>Payment uses <a href="https://docs.nano.to/checkout" target="_blank">nano.to checkout</a></li>
                             <li>Payment link uses <a href="https://www.bitrequest.io/request-url/" target="_blank">BitRequest's interface</a></li>
                             <li>Swap demo uses <a href="https://nanswap.com/" target="_blank">Nanswap's exchange</a></li>
-                            <li>Invoice demo uses <a href="https://docs.nano.to/checkout" target="_blank">nano.to's invoice system</a></li>
                         </ul>
                     </p>
                 </div>
